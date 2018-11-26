@@ -21,26 +21,8 @@ class PostsController {
 	}
 
 	public function insertar(){
-		$post = Post::insertar($_GET['id']);
-		/*$query = "INSERT INTO " . $this->table_name . "
-            SET author=:author, created=:created";
-        $stmtFab = $this->conn->prepare($query);
- 
-        // posted values
-        $this->author=htmlspecialchars(strip_tags($this->author));
- 
-        // to get time-stamp for 'created' field
-        $this->timestamp = date('Y-m-d H:i:s');
- 
-        // bind values 
-        $stmtFab->bindParam(":author", $this->author);
-        $stmtFab->bindParam(":created", $this->timestamp);
-        //var_dump($stmtFab);
-        if($stmtFab->execute()){
-            return true;
-        }else{
-            return false;
-        }*/
+		$post = Post::insertar();
+		
 	}
 }
 ?>

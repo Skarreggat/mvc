@@ -10,7 +10,8 @@
 		</header>
 
 		<?php require_once('routes.php'); ?>
-		<!--<?php //require_once('views/posts/formInsertar.php'); ?>-->
+		<!--<?php //require_once('views/posts/formInsertar.php'); ?>
+
 
 		<footer>
 			Copyright
