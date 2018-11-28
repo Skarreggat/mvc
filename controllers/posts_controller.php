@@ -24,5 +24,19 @@ class PostsController {
 		$post = Post::insertar();
 		
 	}
+
+	public function formUpdate(){
+		$post = Post::find($_GET['id']);
+		require_once('views/posts/formUpdate.php');
+	}
+
+	public function update(){
+		$post = Post::update();
+		call('posts', 'index');
+	}
+
+	public function delete(){
+		$post = Post::delete();
+	}
 }
 ?>
