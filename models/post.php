@@ -109,10 +109,10 @@ class Post {
 		$db = Db::getInstance();
 
 		$req = $db->prepare("DELETE FROM posts WHERE id = ?");
-
+		$id = $_POST['object_id'];
 		$req->bindParam(1, $id);
 
-		$id = $_POST['object_id'];
+		
 
 
 		if($req->execute()){

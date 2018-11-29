@@ -1,31 +1,16 @@
-<DOCTYPE html>
-	<html>
-	<head>
-	</head>
-	<body>
-		<header>
-			<a href='/blog_php_mvc'>Home</a>
-			<a href='?controller=posts&action=index'>Posts</a>
-			<a href='?controller=posts&action=formInsertar'>Crear Posts</a>
-		</header>
+</div>
+<!-- /container -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-		<?php require_once('routes.php'); ?>
-		<!--<?php// require_once('views/posts/formUpdate.php'); ?>-->
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-		<footer>
-			
-			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-			<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-			<!-- Latest compiled and minified Bootstrap JavaScript -->
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-			<!-- bootbox library -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-			<script>
+<!-- bootbox library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<script>
 			// JavaScript for deleting product
-			$(document).on('click', '.delete-object', function(){
+			$(document).on('click', '.delete-post', function(){
 
 				var id = $(this).attr('delete-id');
 
@@ -44,7 +29,7 @@
 					callback: function (result) {
 
 						if(result==true){
-							$.post('delete_post.php', {
+							$.post('post.php', {
 								object_id: id
 							}, function(data){
 								location.reload();
@@ -58,7 +43,5 @@
 				return false;
 			});
 		</script>
-
-</footer>
-</body>
-</html>
+	</body>
+	</html>

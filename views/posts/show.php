@@ -1,5 +1,23 @@
-<p><strong>Post #<?php echo $post->id; ?></strong></p>
-<p><strong>Autor: </strong><?php echo $post->author; ?></p>
-<p><strong>Post: </strong><?php echo $post->content; ?></p>
-<p><strong>Image: </strong><?php echo $post->image ? "<img src='uploads/{$post->image}' style='width:300px;' />" : "No image found."; ?></p>
-<p><strong>Titulo: </strong><?php echo $post->titulo; ?></p>
+<table class='table table-hover table-responsive table-bordered'>
+
+	<tr>
+		<td>Post #</td>
+		<td><input type='text' name='id' class='form-control' value="<?php echo $post->id; ?>" disabled/></td>
+	</tr>
+	<tr>
+		<td>Author</td>
+		<td><input type='text' name='author' class='form-control' value="<?php echo $post->author; ?>" disabled/></td>
+	</tr>
+	<tr>
+		<td>Content</td>
+		<td><input type='text' name='content' class='form-control' value="<?php echo $post->content; ?>" disabled/></td>
+	</tr>
+	<tr>
+		<td>Título</td>
+		<td><input type='text' name='titulo' class='form-control' value="<?php echo $post->titulo; ?>" disabled/></td>
+	</tr>
+	<tr>
+		<td>Image</td>
+		<td><?php echo $post->image ? "<img src='uploads/{$post->image}' style='width:150px;' />" : "No image found."; ?></td>
+	</tr>
+</table>

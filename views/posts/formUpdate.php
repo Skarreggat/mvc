@@ -1,6 +1,6 @@
 <h3>Modificación de post.</h3>
 <form action="?controller=posts&action=update&id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data">
-	<table class='table table-hover table-responsive table-bordered' style="border: solid; border-color: blue;">
+	<table class='table table-hover table-responsive table-bordered'>
 		<tr>
 			<td>Author</td>
 			<td><input type='text' name='author' value="<?php echo $post->author; ?>" class='form-control'  /></td>
