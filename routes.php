@@ -1,5 +1,5 @@
 <?php
-function call($controller, $action) {
+function call($controller, $action, $postID) {
 	require_once('controllers/' . $controller . '_controller.php');
 	switch($controller) {
 		case 'pages':
@@ -11,7 +11,7 @@ function call($controller, $action) {
 		$controller = new PostsController();
 		break;
 	}
-	$controller->{ $action }();
+	$controller->{ $action }($postID);
 }
 // agregando una entrada para el nuevo controlador y sus acciones.
 $controllers = array( 'pages' => ['home', 'error'],
@@ -19,11 +19,11 @@ $controllers = array( 'pages' => ['home', 'error'],
 );
 if (array_key_exists($controller, $controllers)) {
 	if (in_array($action, $controllers[$controller])) {
-		call($controller, $action);
+		call($controller, $action, $postID);
 	} else {
-		call('pages', 'error');
+		call('pages', 'error', null);
 	}
 } else {
-	call('pages', 'error');
+	call('pages', 'error', null);
 }
 ?>

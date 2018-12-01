@@ -1,7 +1,6 @@
 <h3>Creación de post.</h3>
-<form action="?controller=posts&action=insertar" method="post" enctype="multipart/form-data">
+<form action="<?php echo constant('URL') ?>/posts/insertar" method="post" enctype="multipart/form-data">
 	<table class='table table-hover table-responsive table-bordered'>
-
 		<tr>
 			<td>Author</td>
 			<td><input type='text' name='author' class='form-control'/></td>

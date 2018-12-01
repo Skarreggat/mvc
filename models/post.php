@@ -65,7 +65,6 @@ class Post {
 	}
 
 	public static function update(){
-
 		$db = Db::getInstance();
 		$req = $db->prepare("UPDATE posts SET
 			author = :author,
@@ -79,7 +78,7 @@ class Post {
 		$content=htmlspecialchars(strip_tags($_POST['content']));
 		$image=htmlspecialchars(strip_tags($_FILES['image']['name']));
 		$titulo=htmlspecialchars(strip_tags($_POST['titulo']));
-		$id=htmlspecialchars(strip_tags($_GET['id']));
+		$id=htmlspecialchars(strip_tags($_POST['id']));
 		if($_FILES["image"]["name"]==""){
 			$image = $_POST['imageHidden'];
 		}else{
@@ -104,16 +103,12 @@ class Post {
 
 	}
 
-	public static function delete(){
+	public static function delete($id){
 
 		$db = Db::getInstance();
-
-		$req = $db->prepare("DELETE FROM posts WHERE id = ?");
-		$id = $_POST['object_id'];
-		$req->bindParam(1, $id);
-
+		$req = $db->prepare("DELETE FROM posts WHERE id = :id");
 		
-
+		$req->bindParam(':id', $id);
 
 		if($req->execute()){
 			return true;
@@ -136,14 +131,6 @@ class Post {
 
         // error message is empty
 			$file_upload_error_messages="";
-        // make sure that file is a real image
-			$check = getimagesize($_FILES["image"]["tmp_name"]);
-			if($check!==false){
-    	// submitted file is an image
-			}else{
-				$file_upload_error_messages.="<div>Submitted file is not an image.</div>";
-			}
-
 		// make sure certain file types are allowed
 			$allowed_file_types=array("jpg", "jpeg", "png", "gif");
 			if(!in_array($file_type, $allowed_file_types)){

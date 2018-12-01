@@ -1,5 +1,6 @@
 <h3>Modificación de post.</h3>
-<form action="?controller=posts&action=update&id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo constant('URL') ?>/posts/update" method="post" enctype="multipart/form-data">
+	<input type='hidden' name='id' value="<?php echo $post->id; ?>" class='form-control'  />
 	<table class='table table-hover table-responsive table-bordered'>
 		<tr>
 			<td>Author</td>
@@ -11,7 +12,8 @@
 		</tr>
 		<tr>
             <td>Actual Image</td>
-            <td><?php echo $post->image ? "<img src='uploads/{$post->image}' style='width:300px;' />" : "No image found."; ?></td>
+            <?php $yee = constant('URL')."/uploads/".$post->image;?>
+			<td><?php echo $post->image ? "<img src='$yee' style='width:150px;' />" : "No image found."; ?></td>
         </tr>
         <tr>
             <td>New Image</td>

@@ -20,9 +20,9 @@
 <body>
 	<div class="container">
 		<br>
-		<a href='/blog_php_mvc' class='btn btn-info left-margin'><span class='glyphicon glyphicon-home'></span> Home</a>
-		<a href='?controller=posts&action=index' class='btn btn-info left-margin'><span class='glyphicon glyphicon-list'></span> Posts</a>
-		<a href='?controller=posts&action=formInsertar' class='btn btn-info left-margin'><span class='glyphicon glyphicon-plus'></span> Crear Posts</a>
+		<a href='<?php echo constant('URL'); ?>' class='btn btn-info left-margin'><span class='glyphicon glyphicon-home'></span> Home</a>
+		<a href='<?php echo constant('URL'); ?>/posts/index' class='btn btn-info left-margin'><span class='glyphicon glyphicon-list'></span> Posts</a>
+		<a href='<?php echo constant('URL'); ?>/posts/formInsertar' class='btn btn-info left-margin'><span class='glyphicon glyphicon-plus'></span> Crear Posts</a>
 		<br>
 		<br>
 		<?php require_once('routes.php'); ?>
