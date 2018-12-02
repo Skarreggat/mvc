@@ -1,5 +1,5 @@
 <h3>Creación de web.</h3>
-<form action="<?php echo constant('URL') ?>/web/insertar" method="post">
+<form action="<?php echo constant('URL') ?>/web/insertar" method="post"><!--Pasamos por post los valores del formulario-->
 	<table class='table table-hover table-responsive table-bordered'>
 		<tr>
 			<td>Author</td>
@@ -12,11 +12,12 @@
 		<tr>
 			<td>Colaborator</td>
 			<td>
-				<select class='form-control' name='colaborator'>
+				<select class='form-control' name='colaborator'><!--Le damos los valores posibles al select-->
 					<option>Select colaborator...</option>
-					<?php foreach($web as $webb){ ?>
-					<option><?php echo $webb->colaborator;?></option>
-					<?php } ?>
+					<option>alex</option>
+					<option>dani</option>
+					<option>adrian</option>
+					<option>xavi</option>
 				</select>
 			</td>
 		</tr>

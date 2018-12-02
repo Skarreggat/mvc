@@ -1,6 +1,6 @@
 <h3>Creación de web.</h3>
-<form action="<?php echo constant('URL') ?>/web/update" method="post">
-	<input type='hidden' name='id' value="<?php echo $web->id; ?>" class='form-control'/>
+<form action="<?php echo constant('URL') ?>/web/update" method="post"><!--Pasamos por post los datos del formulario-->
+	<input type='hidden' name='id' value="<?php echo $web->id; ?>" class='form-control'/><!--El input hidden es para poder pasar la ID-->
 	<table class='table table-hover table-responsive table-bordered'>
 		<tr>
 			<td>Author</td>

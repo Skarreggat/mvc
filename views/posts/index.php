@@ -18,28 +18,28 @@ echo "<th onclick='sortTable(2)'>Title</th>";
 echo "<th>Actions</th>";
 //el script del sort esta en layout.php
 echo "</tr>";
-
+//loop que recorre cada entrada del objeto(tabla)
 foreach($posts as $post) { 
 
 		echo "<tr>";
-		echo "<td>$post->author</td>";
+		echo "<td>$post->author</td>";//asignamos cada valor correspondiente
 		echo "<td>$post->content</td>";
 		echo "<td>$post->titulo</td>";
 		echo "<td>";
 
 				// read product button
 		?><a href='<?php echo constant('URL'); ?>/posts/show/<?php echo $post->id;?>' class='btn btn-primary left-margin'><?php
-		echo "<span class='glyphicon glyphicon-list'></span> Read";
+		echo "<span class='glyphicon glyphicon-list'></span> Read";//le pasamos la url amigable al boton junto con la id de la entrada
 		echo "</a>";
 
 				// edit product button
 		?><a href='<?php echo constant('URL'); ?>/posts/formUpdate/<?php echo $post->id;?>' class='btn btn-info left-margin'><?php
-		echo "<span class='glyphicon glyphicon-edit'></span> Edit";
+		echo "<span class='glyphicon glyphicon-edit'></span> Edit";//le pasamos la url amigable al boton junto con la id de la entrada
 		echo "</a>";
 
 				// delete product button
 		?><a href='<?php echo constant('URL'); ?>/posts/delete/<?php echo $post->id;?>' class='btn btn-danger'><?php
-		echo "<span class='glyphicon glyphicon-remove'></span> Delete";
+		echo "<span class='glyphicon glyphicon-remove'></span> Delete";//le pasamos la url amigable al boton junto con la id de la entrada
 		echo "</a>";
 
 		echo "</td>";
