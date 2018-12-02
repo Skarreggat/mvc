@@ -22,7 +22,9 @@
 		<br>
 		<a href='<?php echo constant('URL'); ?>' class='btn btn-info left-margin'><span class='glyphicon glyphicon-home'></span> Home</a>
 		<a href='<?php echo constant('URL'); ?>/posts/index' class='btn btn-info left-margin'><span class='glyphicon glyphicon-list'></span> Posts</a>
+		<a href='<?php echo constant('URL'); ?>/web/index' class='btn btn-info left-margin'><span class='glyphicon glyphicon-list'></span> Webs</a>
 		<a href='<?php echo constant('URL'); ?>/posts/formInsertar' class='btn btn-info left-margin'><span class='glyphicon glyphicon-plus'></span> Crear Posts</a>
+		<a href='<?php echo constant('URL'); ?>/web/formInsertar' class='btn btn-info left-margin'><span class='glyphicon glyphicon-plus'></span> Crear Webs</a>
 		<br>
 		<br>
 		<?php require_once('routes.php'); ?>

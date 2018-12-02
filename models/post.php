@@ -178,5 +178,31 @@ class Post {
 
 		return $result_message;
 	}
+	function read(){
+        //select all data
+		$db = Db::getInstance();
+		$req = $db->prepare("SELECT
+			id, author
+			FROM
+			posts
+			ORDER BY
+			author");  
+
+			$req->execute();
+
+			return $req;
+	}
+	/*function readName(){
+
+    $db = Db::getInstance();
+	$req = $db->prepare("SELECT author FROM posts WHERE id = ? limit 0,1");
+ 
+    $req->bindParam(1, $id);
+    $req->execute();
+ 
+    //$row = $req->fetch(PDO::FETCH_ASSOC);
+     
+    $author = $_POST['author'];
+}*/
 
 }

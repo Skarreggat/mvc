@@ -10,35 +10,36 @@ echo "</div>";
 echo "</div>";
 echo "</form>";
 //_____________________________________________________________________________________
-echo "<table id='tabla' class='table table-hover table-responsive table-bordered'>";
+echo "<table id='tabla2' class='table table-hover table-responsive table-bordered'>";
 echo "<tr>";
 echo "<th onclick='sortTable(0)'>Author</th>";
-echo "<th onclick='sortTable(1)'>Content</th>";
-echo "<th onclick='sortTable(2)'>Title</th>";
+echo "<th onclick='sortTable(1)'>Section</th>";
+echo "<th onclick='sortTable(2)'>Colaborator</th>";
+echo "<th onclick='sortTable(3)'>Date Colaborator</th>";
 echo "<th>Actions</th>";
 //el script del sort esta en layout.php
 echo "</tr>";
 
-foreach($posts as $post) { 
-
+foreach($web as $webb) { 
 		echo "<tr>";
-		echo "<td>$post->author</td>";
-		echo "<td>$post->content</td>";
-		echo "<td>$post->titulo</td>";
+		echo "<td>$webb->author_id</td>";
+		echo "<td>$webb->section</td>";
+		echo "<td>$webb->colaborator</td>";
+		echo "<td>$webb->colaboratorDate</td>";
 		echo "<td>";
 
 				// read product button
-		?><a href='<?php echo constant('URL'); ?>/posts/show/<?php echo $post->id;?>' class='btn btn-primary left-margin'><?php
+		?><a href='<?php echo constant('URL'); ?>/web/show/<?php echo $webb->id;?>' class='btn btn-primary left-margin'><?php
 		echo "<span class='glyphicon glyphicon-list'></span> Read";
 		echo "</a>";
 
 				// edit product button
-		?><a href='<?php echo constant('URL'); ?>/posts/formUpdate/<?php echo $post->id;?>' class='btn btn-info left-margin'><?php
+		?><a href='<?php echo constant('URL'); ?>/web/formUpdate/<?php echo $webb->id;?>' class='btn btn-info left-margin'><?php
 		echo "<span class='glyphicon glyphicon-edit'></span> Edit";
 		echo "</a>";
 
 				// delete product button
-		?><a href='<?php echo constant('URL'); ?>/posts/delete/<?php echo $post->id;?>' class='btn btn-danger'><?php
+		?><a href='<?php echo constant('URL'); ?>/web/delete/<?php echo $webb->id;?>' class='btn btn-danger'><?php
 		echo "<span class='glyphicon glyphicon-remove'></span> Delete";
 		echo "</a>";
 
